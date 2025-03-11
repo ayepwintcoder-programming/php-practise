@@ -422,6 +422,113 @@ echo $status = (empty($user)) ? "anonymous" : $user;
         if,if else, if elseif else statements
     </h1>
 </center>
+<pre>if (condition) {
+  // code to be executed if condition is true;
+}</pre>
 
+<?php
+if (5 > 3) {
+    echo "Have a good day!";
+  }
+  echo "<br>";
+  ?>
+  <pre>
+  if (condition) {
+  // code to be executed if condition is true;
+} else {
+  // code to be executed if condition is false;
+}
+</pre>
+
+<?php
+$t = date("H");
+
+if ($t < "20") {
+  echo "Have a good day!";
+} else {
+  echo "Have a good night!" . "<br>";
+}?>
+
+<pre>if (condition) {
+  code to be executed if this condition is true;
+} elseif (condition) {
+  // code to be executed if first condition is false and this condition is true;
+} else {
+  // code to be executed if all conditions are false;
+}</pre>
+
+<?php
+$t = date("H");
+
+if ($t < "10") {
+  echo "Have a good morning!";
+} elseif ($t < "20") {
+  echo "Have a good day!";
+} else {
+  echo "Have a good night!" . "<br>";
+}?>
+
+<h2>Nested if</h2>
+<?php
+$a = 13;
+
+if ($a > 10) {
+  echo "Above 10";
+  if ($a > 20) {
+    echo " and also above 20";
+  } else {
+    echo " but not above 20";
+  }
+}?>
+
+
+<center><h1>switch statement</h1></center>
+<br>
+
+<pre>$e = "berry";
+
+switch ($e) {
+    case "strawberry";
+        echo "you like strawberry";
+    
+        break;
+    
+    case "orange";
+        echo "you like orange";
+    break;
+
+    case "berry";
+    echo "you like berry";
+
+    break;
+
+    default:
+    echo "you don't like fruit";//if there is no match in upper cases the answer will be default
+}
+</pre>
+<?php
+$e = "berry";
+
+switch ($e) {
+    case "strawberry";
+        echo "you like strawberry";
+    
+        break;
+    
+    case "orange";
+        echo "you like orange";
+    break;
+
+    case "berry";
+    echo "you like berry";
+
+    break;
+
+    default:
+    echo "you don't like fruit";//if there is no match in upper cases the answer will be default
+}
+?>
+
+<center><h1>Loops</h1></center>
 </body>
 </html>
