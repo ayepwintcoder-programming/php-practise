@@ -417,7 +417,11 @@ $user = "John Doe";
 // if empty($user) = FALSE, set $status = "logged in"
 echo $status = (empty($user)) ? "anonymous" : $user;
 ?>
-
+<center>
+    <h1>
+        if,if else, if elseif else statements
+    </h1>
+</center>
 
 </body>
 </html>
