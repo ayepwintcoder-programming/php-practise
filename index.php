@@ -579,11 +579,46 @@ echo "<h2>for loop(for loop is useful for when you know how many time script sho
     foreach ($fruit as $x) {
         echo "$x <br>";
     }
-echo "<br>"
+echo "<br>";
     $ruit = array("susu likes"=>"strawberry", "mimi likes" => "banana");
     foreach ($ruit as $x => $y) {
         echo "$x:$y <br>";
     }
+    echo "<br>";
+
+Class name {
+    public  $firtname;
+    public $lastname;
+    public function __construct($firstname , $lastname){
+        $this->first = $firstname;
+        $this->last = $lastname;
+    }
+}
+
+$myname = new name("Ir","is");
+
+foreach ($myname as $x) {
+    echo "$x";
+}
     ?>
+
+    <pre>
+ ^
+ |    
+    Class name {
+    public  $firtname;
+    public $lastname;
+    public function __construct($firstname , $lastname){
+        $this->first = $firstname;
+        $this->last = $lastname;
+    }
+}
+
+$myname = new name("Ir","is");
+
+foreach ($myname as $x) {
+    echo "$x";
+}
+</pre>
 </body>
 </html>
