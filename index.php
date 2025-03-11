@@ -530,5 +530,35 @@ switch ($e) {
 ?>
 
 <center><h1>Loops</h1></center>
+
+<p style="font-size:16px; margin-left:50px;" >while loop,do while loop,for loop,foreach loop</p>
+
+<H2>while loop</H2>
+
+<?php
+$n = 5;
+
+    while ($n < 10) {
+        if ($n == 8) break;//with break statement we can stop stop the loop even if the condition is still true
+        echo "$n<br>";
+        $n++; 
+    }
+
+    while ($n < 10) {
+        if ($n == 8) continue;//with continue statement we can skip the number
+        echo "$n<br>";
+        $n++; 
+    }
+
+echo "<h2>do while loop</h2>";
+
+    /* while loop without break statement or continue 
+    $n = 5;
+
+    while ($n < 10) {
+        echo "$n<br>";
+        $n++; 
+    }*/
+    ?>
 </body>
 </html>
