@@ -537,6 +537,7 @@ switch ($e) {
 
 <?php
 $n = 5;
+$y = 6;
 
     while ($n < 10) {
         if ($n == 8) break;//with break statement we can stop stop the loop even if the condition is still true
@@ -544,14 +545,12 @@ $n = 5;
         $n++; 
     }
 
-    while ($n < 10) {
-        if ($n == 8) continue;//with continue statement we can skip the number
-        echo "$n<br>";
-        $n++; 
+    while ($y < 15) {
+        $y++; 
+        if ($y == 8) continue;//with continue statement we can skip the number
+        echo "$y<br>";
+
     }
-
-echo "<h2>do while loop</h2>";
-
     /* while loop without break statement or continue 
     $n = 5;
 
@@ -559,6 +558,32 @@ echo "<h2>do while loop</h2>";
         echo "$n<br>";
         $n++; 
     }*/
+echo "<h2>do while loop (do statement is execut code if the \"while\" condition is true of false whatever it will output the value of \$n but the condition of \"while\" is true it will execute    )</h2>";
+
+
+do {
+    echo "$n<br>";
+    $n++;
+} while ($n < 10);
+
+echo "<h2>for loop(for loop is useful for when you know how many time script should run)</h2>";
+
+    for ($x = 0 ; $x <= 100 ; $x+=50) {
+        echo "the number is : $x <br>";
+    }
+
+    echo "<h2>foreach loop(foreach loop is use for arry and object)</h2>";
+
+    $fruit = array("strawberry" , "banana" , "apple");
+
+    foreach ($fruit as $x) {
+        echo "$x <br>";
+    }
+echo "<br>"
+    $ruit = array("susu likes"=>"strawberry", "mimi likes" => "banana");
+    foreach ($ruit as $x => $y) {
+        echo "$x:$y <br>";
+    }
     ?>
 </body>
 </html>
