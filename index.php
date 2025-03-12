@@ -620,5 +620,96 @@ foreach ($myname as $x) {
     echo "$x";
 }
 </pre>
+
+<center>
+    <h1 style="text-transform:uppercase">function</h1>
+</center>
+
+<pre>
+
+function mypt($animal , $owner , $color) {
+    echo "this $color $animal  is belong to $owner <br>";
+    }
+
+mypt("cat" , "me" , "black");
+
+function mypi($animal = "dog" , $owner = "his" , $color="brown") {
+        echo "this $color $animal is belong to $owner <br>";
+    }
+    mypi();
+
+    
+    $a = 1;
+    $b = 2;
+
+    function ret() {
+        global $a ,$b;
+        $s = $a + $b;
+        return $s;
+    }
+    echo "1 + 2 =" . ret() . "<br>";
+
+    //another way
+
+    function rei($c , $d) {
+        $t = $c * $d;
+        return $t;
+    }
+
+    echo "8*8=" . rei(8,8) ."<br>";
+    echo "9*9=" . rei(9,9) ."<br>";
+
+    function u(&$name) {//& is change the $num value without that code will run no err but not change the agrument value($num)
+        $name += 5;
+    }
+    $num = 2;
+    u($num);
+    echo $num;
+</pre>
+    <?php
+
+	function mypt($animal , $owner , $color) {
+		echo "this $color $animal  is belong to $owner <br> <br>";
+        }
+    
+    mypt("cat" , "me" , "black");
+
+    function mypi($animal = "dog" , $owner = "his" , $color="brown") {
+        echo "this $color $animal is belong to $owner <br>";
+    }
+    mypi();//will use the default value of parameter
+
+    echo "<h2>return statement</h2>";
+
+    $a = 1;
+    $b = 2;
+
+    function ret() {
+        global $a ,$b;
+        $s = $a + $b;
+        return $s;
+    }
+    echo "1 + 2 =" . ret() . "<br>";
+
+    //another way
+
+    function rei($c , $d) {
+        $t = $c * $d;
+        return $t;
+    }
+
+    echo "8*8=" . rei(8,8) ."<br>";
+    echo "9*9=" . rei(9,9) ."<br>";
+
+    echo"<center>passing agrument by reference</center>";
+
+    function u(&$name) {//& is change the $num value without that code will run no err but not change the agrument value($num)
+        $name += 5;
+    }
+    $num = 2;
+    u($num);
+    echo $num;
+?>
+
 </body>
 </html>
