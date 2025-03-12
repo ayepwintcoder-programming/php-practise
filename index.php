@@ -632,13 +632,13 @@ function mypt($animal , $owner , $color) {
     }
 
 mypt("cat" , "me" , "black");
-
+<hr>
 function mypi($animal = "dog" , $owner = "his" , $color="brown") {
         echo "this $color $animal is belong to $owner <br>";
     }
     mypi();
 
-    
+    <hr>
     $a = 1;
     $b = 2;
 
@@ -648,7 +648,7 @@ function mypi($animal = "dog" , $owner = "his" , $color="brown") {
         return $s;
     }
     echo "1 + 2 =" . ret() . "<br>";
-
+<hr>
     //another way
 
     function rei($c , $d) {
@@ -658,7 +658,7 @@ function mypi($animal = "dog" , $owner = "his" , $color="brown") {
 
     echo "8*8=" . rei(8,8) ."<br>";
     echo "9*9=" . rei(9,9) ."<br>";
-
+<hr>
     function u(&$name) {//& is change the $num value without that code will run no err but not change the agrument value($num)
         $name += 5;
     }
@@ -708,7 +708,68 @@ function mypi($animal = "dog" , $owner = "his" , $color="brown") {
     }
     $num = 2;
     u($num);
-    echo $num;
+    echo $num ."<br>";
+
+
+    function io(...$gethearraynumbers) {
+        $o = 2 ;
+        $counthearraynumbers = count($gethearraynumbers);//set $gethearraynumbers because that parameters value is $ali's
+        for($i = 1 ; $i < $counthearraynumbers ; $i+=2){//always remember if you set 0 it will start by 0 place.if you set 1 it will start by 1 place
+            $o += $gethearraynumbers[$i];          //^နေရာကို2တိုးပီးပေါင်း 2+4=6
+            //$o' 2 ကို6နဲ့ပေါင်း          
+        }
+        return $o;
+    }
+    $a = io(1/*0*/ , 2 , 3, 4, 5);
+    echo $a;
+
+?>
+<hr>
+<pre>
+    
+function u(&$name) {//& is change the $num value without that code will run no err but not change the agrument value($num)
+        $name += 5;
+    }
+    $num = 2;
+    u($num);
+    echo $num ."<br>";
+
+function io(...$gethearraynumbers) {
+        $o = 2 ;
+        $counthearraynumbers = count($gethearraynumbers);//set $gethearraynumbers because that parameters value is $ali's
+        for($i = 1 ; $i < $counthearraynumbers ; $i+=2){//always remember if you set 0 it will start by 0 place.if you set 1 it will start by 1 place
+            $o += $gethearraynumbers[$i];          //^နေရာကို2တိုးပီးပေါင်း 2+4=6
+            //$o' 2 ကို6နဲ့ပေါင်း          
+        }
+        return $o;
+    }
+    $a = io(1/*0*/ , 2 , 3, 4, 5);
+    echo $a;
+</pre>
+<hr>
+<pre>
+	function ui($animal , ...$color) {
+    	$txt = " ";
+        $len = count($color);
+        for($i = 0 ; $i < $len ; $i++){
+         $txt .= "hi, {$color[$i]} $animal.<br>";
+        }
+    return $txt;
+    }
+    $e = ui("cat", "orange" ,"black" ,"white" ,"gray");
+    echo $e;
+</pre>
+    <?php
+	function ui($animal , ...$color) {
+    	$txt = " ";
+        $len = count($color);
+        for($i = 0 ; $i < $len ; $i++){
+         $txt .= "hi, {$color[$i]} $animal.<br>";
+        }
+    return $txt;
+    }
+    $e = ui("cat", "orange" ,"black" ,"white" ,"gray");
+    echo $e;
 ?>
 
 </body>
