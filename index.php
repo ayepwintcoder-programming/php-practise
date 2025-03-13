@@ -771,6 +771,44 @@ function io(...$gethearraynumbers) {
     $e = ui("cat", "orange" ,"black" ,"white" ,"gray");
     echo $e;
 ?>
+<center>
+    <h1>strict (declare(strict_types=1)  it's a rule very strict rule)</h1></center>
+<pre>    //declare(strict_types=1);//this should be the firt line of the file(that why i set command if you want to see how it work go to project.php file) and this is set very strict rule if parameter want string the value should be string like that
+
+//this string mean match the agrument's value should be string if not match cause the err
+function ew(string $fname , string $lname) : string {
+return $fname . $lname;
+}
+$a = ew("aye","pwint");
+echo $a . "<br>"; 
+//there is no err cause agrument's value is string and parameters rule set string too </pre>
+    <?php
+    //declare(strict_types=1);//this should be the firt line of the file(that why i set command if you want to see how it work go to project.php file) and this is set very strict rule if parameter want string the value should be string like that
+
+                    //this string mean match the agrument's value should be string if not match cause the err
+        function ew(string $fname , string $lname) : string {
+            return $fname . $lname;
+        }
+        $a = ew("aye","pwint");
+        echo $a . "<br>"; 
+//there is no err cause agrument's value is string and parameters rule set string too 
+echo "<hr>";
+        
+echo "<pre>function addNumbers(int \$a, int \$b): float {
+        // With :float, the function returns the division result as a float (e.g., 0.833... for 5/6). With :int, the float result is truncated to an integer (e.g., 0).
+    return  \$a / \$b;
+  }
+  echo addNumbers(5, \"10\");//\"10\"(string) auto changed to 10 because of only without strict </pre>";
+
+
+function addNumbers(int $a, int $b): float {
+        // With :float, the function returns the division result as a float (e.g., 0.833... for 5/6). With :int, the float result is truncated to an integer (e.g., 0).
+    return  $a / $b;
+  }
+  echo addNumbers(5, "10");//"10"(string) auto changed to 10 because of only without strict 
+  
+
+        ?>
 
 </body>
 </html>

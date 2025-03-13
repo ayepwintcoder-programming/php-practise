@@ -1,6 +1,22 @@
+<?php
+    declare(strict_types=1);//this is set very strict rule if parameter want string the value should be string like that
+
+                    //this string mean match the agrument's value should be string if not match cause the err
+        function ew(string $fname , string $lname) : string {
+            return $fname . $lname;
+        }
+        $a = ew("aye","pwint");
+        echo $a . "<br>"; 
+//there is no err cause agrument's value is string and parameters rule set string too 
+        ?>
+
 <!DOCTYPE html>
 <html>
 <body>
+<center>
+    <h1>strict (declare(strict_types=1)  it's a rule very strict rule)</h1></center>
+
+
 
 <form method="get">
     <!-- Input for user name -->
