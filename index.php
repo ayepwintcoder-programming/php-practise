@@ -831,22 +831,34 @@ function addNumbers(int $a, int $b): float {
     }
 
     echo $pets[0][0] ." :"."cout :".$pets[0][1] ." " ."color :".$pets[0][2];
-
+echo "<br>";
     echo $_SERVER['REQUEST_METHOD'];
 ?>
-
-
-<form action="" method="post">
+<br>
+<br>
+<hr>
+<form action="<?php echo htmlspecialchars($_SERVER['PHP_SELF']); ?>" method="post">
     Name: <input type="text" name="username"><br>
     Age : <input type="text" name="age"><br>
     <input type="submit" value="submit">
 </form>
-
 <?php
-    if (!empty($_REQUEST)) {
-        echo "Username :" . $_REQUEST['username'] . "<br>";
-        echo "Age" . $_REQUEST['age'] . "<br>";
+if (!empty($_REQUEST)) {
+    $username = htmlspecialchars($_REQUEST['username']);
+    $age = htmlspecialchars($_REQUEST['age']);
+    if (empty($username) || empty($age)) {
+        echo "အမည် သို့မဟုတ် အသက် ဗလာ ဖြစ်နေသည်။";
+    } else {
+        echo "Username: " . $username . "<br>";
+        echo "Age: " . $age . "<br>";
     }
-    ?>
+}
+
+?>
+
+<form action="/search" method="GET">
+    <input type="text" name="query">
+    <input type="submit" value="Search">
+</form>
 </body>
 </html>
