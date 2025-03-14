@@ -586,7 +586,7 @@ echo "<br>";
     }
     echo "<br>";
 
-Class name {
+class name {
     public  $firtname;
     public $lastname;
     public function __construct($firstname , $lastname){
@@ -810,5 +810,43 @@ function addNumbers(int $a, int $b): float {
 
         ?>
 
+<center>
+    <h1>Array</h1>
+</center>
+
+<?php 
+    $pets = array (
+        array ("cat" , 10 , "orange"),
+        array ("dog" , 12 , "white"),
+        array ("fish" , 8 , "yellow"),
+    );
+
+    for ($row = 0; $row < 3 ; $row++) {
+        echo "<p><b>Row number $row</b></p>";  
+        echo "<ul>";
+            for ($col = 0; $col < 3; $col++) {
+                echo "<li>".$pets[$row][$col]."</li>";
+            }
+            echo "</ul>";   
+    }
+
+    echo $pets[0][0] ." :"."cout :".$pets[0][1] ." " ."color :".$pets[0][2];
+
+    echo $_SERVER['REQUEST_METHOD'];
+?>
+
+
+<form action="" method="post">
+    Name: <input type="text" name="username"><br>
+    Age : <input type="text" name="age"><br>
+    <input type="submit" value="submit">
+</form>
+
+<?php
+    if (!empty($_REQUEST)) {
+        echo "Username :" . $_REQUEST['username'] . "<br>";
+        echo "Age" . $_REQUEST['age'] . "<br>";
+    }
+    ?>
 </body>
 </html>

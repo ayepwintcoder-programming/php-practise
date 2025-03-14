@@ -41,6 +41,38 @@
    $color = $_GET['color'] ?? "red";
    echo "Color: " . $color;
 ?>  
+<?php
+class Name {
+    public $firstname;
+    public $lastname;
+    public function __construct($firstname, $lastname) {
+        $this->firstname = $firstname; // Corrected from $this->first
+        $this->lastname = $lastname;   // Corrected from $this->last
+    }
+}
+
+$myname = new Name("Ir", "is");
+
+foreach ($myname as $x) {
+    echo "$x<br>";
+}
+?>
+<?php
+class name {
+    public  $firtname;
+    public $lastname;
+    public function __construct($firstname , $lastname){
+        $this->first = $firstname;
+        $this->last = $lastname;
+    }
+}
+
+$myname = new name("Ir","is");
+
+foreach ($myname as $x) {
+    echo "$x";
+}
+    ?>
 
 </body>
 </html>
