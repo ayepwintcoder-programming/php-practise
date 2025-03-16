@@ -860,5 +860,32 @@ if (!empty($_REQUEST)) {
     <input type="text" name="query">
     <input type="submit" value="Search">
 </form>
+
+<center><h1>Regex</h1></center>
+
+<?php
+    $df = "15hi my n\name is58\nappA  Zbecie56";
+    $pattern = "/^a/im";//  /i is just find don't care about uppercase of lowercase and /m is find another line 
+    $pattern2 = "/hi/";
+    $pattern3 = "/[0-9]$/m";//$ is find  the last of the line and 0-9 is between 0 and 9 same as a-z 
+    $pattern4 = "/[Y-e]/";  
+
+    echo preg_match($pattern , $df) . "<br>";//the answer is 1 because preg_match() is found 1 just stop there no more finding 
+    echo preg_match_all($pattern , $df) . "<br>";//preg_match_all is find the all of containg in a sentence if you want to find the whole sentence don' forget to use preg_match_all()
+    echo preg_replace($pattern2 , "hello" ,$df) . "<br>";//replace you know:)  
+    echo preg_match_all($pattern3 , $df) . "<br>";
+    echo preg_match_all($pattern4 , $df);//find between Z to e like (Y Z a b c d e )
+
+    echo "<br><br>";
+
+    $str = "Apples and bannanann \nbaNananannn ";
+    $pattern = "/ba(n{1,2})/im";//grouping
+    echo preg_match_all($pattern, $str);  // Outputs 2
+
+
+?>
+
+
+
 </body>
 </html>
