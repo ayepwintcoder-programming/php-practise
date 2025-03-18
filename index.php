@@ -544,10 +544,10 @@ $y = 6;
         echo "$n<br>";
         $n++; 
     }
-
+echo "<br>";
     while ($y < 15) {
         $y++; 
-        if ($y == 8) continue;//with continue statement we can skip the number
+        if ($y == 8){ continue;}//with continue statement we can skip the number
         echo "$y<br>";
 
     }
@@ -572,6 +572,7 @@ echo "<h2>for loop(for loop is useful for when you know how many time script sho
         echo "the number is : $x <br>";
     }
 
+    for ()
     echo "<h2>foreach loop(foreach loop is use for arry and object)</h2>";
 
     $fruit = array("strawberry" , "banana" , "apple");
@@ -884,8 +885,13 @@ if (!empty($_REQUEST)) {
 
 
 ?>
-
-
-
+<br>
+<script>
+    for (x = 0 ; x <10 ; x++){
+        if (x == 5)continue;
+        
+        document.write("the number is "+ x +"<br>");
+    }
+</script>
 </body>
 </html>
