@@ -1,10 +1,11 @@
 <html>
     <head>
         <style>
-.error {color: #FF0000;}
+.err {color: #FF0000;}
         </style>
     </head>
 <body>
+
 
 <form method="post" action="<?php echo htmlspecialchars($_SERVER["PHP_SELF"]);?>">
     <!-- $_SERVER["PHP_SELF"]) is post the data in the same page-->
@@ -25,31 +26,47 @@ Your email address is: <?php echo $_POST["email"]; ?>
 <br>
 <br>
 
-<form action="<?php echo ($_SERVER['PHP_SELF']);?>" method="post"><!-- post to the another page but not same like upper -->
-    Name:<input type="text" name="nameeo"><span class="err"><?php echo $nameerr;?></span>
-    email:<input type="text" name="emailll"><span class="err"><?php echo $emailerr;?></span>
-    <input type="submit">
-</form>
-<br>
-<br>
-
 <?php
-if ($_SERVER["REQUEST_METHOD"] == "POST") {
-  //trim() , htmlspecialchars() and stripslashes() are combine into test_input
-  if (empty($name)) {
-    echo $nameerr = "name is required";
-  } else {
-    $name = test_input($_POST['nameeo']);
-}
-echo "<br>";
-  if (empty($email)) {
-    echo $emailerr = "email is required";
-  } else {
-    $email = test_input($_POST['emailll']);//writed by different way
-}
+  $name = $email = "";
+  $nameerr = $emailerr = "";
 
-}
-?>
+  if ($_SERVER["REQUEST_METHOD"] == "POST") {
+    //trim() , htmlspecialchars() and stripslashes() are combine into test_input
+    if (empty($name)) {
+       $nameerr = "name is required";
+    } else {
+      $name = test_input($_POST['nameeo']);
+  }
+  echo "<br>";
+    if (empty($email)) {
+       $emailerr = "email is required";
+    } else {
+      $email = test_input($_POST['emailll']);//writed by different way
+  }
+
+  }
+
+  function test_input($data){
+    $data = trim($data);
+    $data = stripslashes($data);
+    $data = htmlspecialchars($data);
+    return $data;
+  }
+  ?>
+
+  <form action="<?php echo ($_SERVER['PHP_SELF']);?>" method="post"><!-- post to the another page but not same like upper -->
+      Name:<input type="text" name="nameeo"><span class="err"><?php echo $nameerr;?></span><br>
+      email:<input type="text" name="emailll"><span class="err"><?php echo $emailerr;?></span><br><!-- this way is you can write the text as you like-->
+      age:<input type="text" name="age" required><!--this way is less write but not good looking-->
+      <input type="submit">
+  </form>
+
+  Welcome <?php echo $_POST["nameeo"]; ?><br>
+Your email address is: <?php echo $_POST["emailll"]; ?><br>
+AGE <?php echo $_POST["age"]; ?>
+  <br>
+  <br>
+
 
 
 <center><h1>get method</h1></center>
