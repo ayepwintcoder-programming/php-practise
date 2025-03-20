@@ -2,6 +2,8 @@
 // Form ကို submit လုပ်တဲ့အခါ စစ်ဆေးခြင်း
 if ($_SERVER['REQUEST_METHOD'] == 'POST') {
 
+    $name
+
     // Email validation pattern (email format စစ်ဆေးမှု regex)
     $email_pattern = "/^[a-zA-Z0-9._%+-]+@[a-zA-Z0-9.-]+\.[a-zA-Z]{2,6}$/";
 

@@ -41,6 +41,7 @@
    $color = $_GET['color'] ?? "red";
    echo "Color: " . $color;
 ?>  
+<br>
 <?php
 class Name {
     public $firstname;
@@ -54,11 +55,12 @@ class Name {
 $myname = new Name("Ir", "is");
 
 foreach ($myname as $x) {
-    echo "$x<br>";
+    echo "$x";
 }
 ?>
+<br>
 <?php
-class name {
+class Oame {
     public  $firtname;
     public $lastname;
     public function __construct($firstname , $lastname){
@@ -67,7 +69,7 @@ class name {
     }
 }
 
-$myname = new name("Ir","is");
+$myname = new Oame("Ir","is");
 
 foreach ($myname as $x) {
     echo "$x";

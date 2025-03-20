@@ -2,9 +2,11 @@
 <body>
 
 
-Welcome <?php if ($_SERVER["REQUEST_METHOD"] == "POST"){
-    echo $_POST["namee"]; }?><br>
-Your email address is: <?php echo $_POST["emaill"]; ?>
+<?php 
+if ($_SERVER["REQUEST_METHOD"] == "POST"){
+    echo "Welcome" . $_POST["namee"] . "<br>";
+ echo "Your email address is: " .$_POST["emaill"];}
+ ?>
 
 </body>
 </html>
